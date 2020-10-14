@@ -1,6 +1,12 @@
 import React from 'react';
-import styled from "styled-components";
-import {ComponentContainer, TextBold, TextLight, button_xl} from "../shared/commonCss";
+import styled from 'styled-components';
+import {
+  ComponentContainer,
+  TextBold,
+  TextLight,
+  baseSpacing,
+  button_xl,
+} from '../shared/commonCss';
 
 export type PlayListProps = {
   songImageUrl: string;
@@ -21,7 +27,7 @@ const GalleryButton = styled.button`
 const SongImageContainer = styled.div`
   width: 82px;
   height: 82px;
-  margin: 0 10px;
+  margin: 0 ${baseSpacing};
   border-radius: 10px;
 `;
 

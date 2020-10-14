@@ -1,11 +1,13 @@
 import styled, {createGlobalStyle, css} from 'styled-components';
 
+export const baseSpacing = "10px";
+
 export const bodyStyles = css`
   background-color: #0D0D0E;
 `;
 
 export const containers = css`
-  padding: 0 10px;
+  padding: 0 ${baseSpacing};
 `;
 
 export const fontFamily = css`
@@ -40,12 +42,7 @@ export const button_xl = css`
 `;
 
 export const ComponentContainer = styled.div`
-  padding: 0 10px;
-`;
-
-export const ActionButton = styled.button`
-  ${button_xs}
-  margin: 0 10px;
+  padding: 0 ${baseSpacing};
 `;
 
 export const ControlContainer = styled.div`
