@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ComponentContainer, TextBold, TextLight, baseSpacing } from '../shared/commonCss';
 import { PreviousSong, NextSong } from './Icons';
-import { DragButton } from './Buttons';
+import { ActionButton } from './Buttons';
 
 export type PlayListProps = {
   songImageUrl: string;
@@ -13,10 +13,13 @@ export type PlayListProps = {
 
 const PlayListContainer = styled(ComponentContainer)`
   display: flex;
+  flex-grow: 1;
+  width: 50%;
   align-items: center;
 `;
 
 const SongImageContainer = styled.div`
+  flex-shrink: 0;
   width: 82px;
   height: 82px;
   margin: 0 ${baseSpacing};
@@ -28,16 +31,32 @@ const SongImage = styled.img`
   max-height: 100%;
 `;
 
+const textEllipsis = css`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const SongTitle = styled(TextBold)`
+  ${textEllipsis}
+`;
+
+const AlbumInfo = styled(TextLight)`
+  ${textEllipsis}
+`;
+
 export const PlayList: React.FC<PlayListProps> = ({ songImageUrl, songTitle, albumName, artist }) => (
   <PlayListContainer>
-    <DragButton icon={PreviousSong}/>
+    <ActionButton icon={PreviousSong} onClick={() => {}}/>
     <SongImageContainer>
       <SongImage src={songImageUrl} alt={`${songTitle} album image`}/>
     </SongImageContainer>
-    <div>
-      <TextBold>{songTitle}</TextBold>
-      <TextLight>{albumName} | {artist}</TextLight>
+    <div style={{overflow: "hidden"}}>
+      <SongTitle>{songTitle}</SongTitle>
+      <AlbumInfo>{albumName} | {artist}</AlbumInfo>
     </div>
-    <DragButton icon={NextSong}/>
+    <div style={{marginLeft:"auto"}}>
+      <ActionButton icon={NextSong} onClick={() => {}}/>
+    </div>
   </PlayListContainer>
 );

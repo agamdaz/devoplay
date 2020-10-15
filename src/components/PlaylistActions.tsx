@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ComponentContainer } from '../shared/commonCss';
 import { ExpandPlayList, LikeSong, DislikeSong } from './Icons';
 import { ActionButton } from './Buttons';
@@ -9,10 +10,14 @@ export interface PlaylistActionsProps {
   onClickDislike: () => void;
 }
 
+const Container = styled(ComponentContainer)`
+  flex-shrink: 0;
+`;
+
 export const PlaylistActions: React.FC<PlaylistActionsProps> = ({ onClickPlaylist, onClickLike, onClickDislike,  }) => (
-  <ComponentContainer>
+  <Container>
       <ActionButton icon={ExpandPlayList} onClick={onClickPlaylist}/>
       <ActionButton icon={LikeSong} onClick={onClickLike}/>
       <ActionButton icon={DislikeSong} onClick={onClickDislike}/>
-  </ComponentContainer>
+  </Container>
 );
