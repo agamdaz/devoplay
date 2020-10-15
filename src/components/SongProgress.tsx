@@ -4,10 +4,10 @@ import {
     ComponentContainer,
     ControlContainer,
     ControlLabelContainer,
-    TextLight,
     ControlPosition,
     brandPrimary,
     lightGrey,
+    textLight,
 } from '../shared/commonCss';
 import { Pause } from './Icons';
 import { DragButton } from './Buttons';
@@ -31,11 +31,15 @@ export const ControlScale = styled.div`
   max-width: 396px;
 `;
 
+const Timer = styled.span`
+    ${textLight}
+`;
+
 export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElapsed}) => (
   <ComponentContainer>
     <ControlLabelContainer>
-      <TextLight>{millisecondsToTimer(timeElapsed)}</TextLight>
-      <TextLight>{millisecondsToTimer(timeTotal)}</TextLight>
+      <Timer>{millisecondsToTimer(timeElapsed)}</Timer>
+      <Timer>{millisecondsToTimer(timeTotal)}</Timer>
     </ControlLabelContainer>
     <ControlContainer>
       <ControlPosition style={{left: getProgress(timeTotal, timeElapsed)}}>

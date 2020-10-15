@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ComponentContainer, TextBold, TextLight, baseSpacing } from '../shared/commonCss';
+import { ComponentContainer, textBold, textLight, baseSpacing } from '../shared/commonCss';
 import { PreviousSong, NextSong } from './Icons';
 import { ActionButton } from './Buttons';
 
@@ -26,23 +26,35 @@ const SongImageContainer = styled.div`
   border-radius: 10px;
 `;
 
-const SongImage = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
-
 const textEllipsis = css`
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
 
-const SongTitle = styled(TextBold)`
-  ${textEllipsis}
+const linkHover = css`
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `;
 
-const AlbumInfo = styled(TextLight)`
+
+const SongImage = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`;
+const SongTitle = styled.a`
+  ${textBold}
   ${textEllipsis}
+  ${linkHover}
+`;
+
+const AlbumInfo = styled.a`
+  ${textLight}
+  ${textEllipsis}
+  ${linkHover}
 `;
 
 export const PlayList: React.FC<PlayListProps> = ({ songImageUrl, songTitle, albumName, artist }) => (

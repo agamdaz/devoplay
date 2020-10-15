@@ -4,8 +4,10 @@ import {
   ComponentContainer,
   ControlContainer,
   ControlLabelContainer,
-  TextLight,
-  ControlPosition, lightGrey, brandPrimary,
+  ControlPosition,
+  lightGrey,
+  brandPrimary,
+  textLight,
 } from '../shared/commonCss';
 import { Volume } from './Icons';
 import { DragButton } from './Buttons';
@@ -18,10 +20,14 @@ export const ControlScale = styled.div`
   max-width: 110px;
 `;
 
+const Timer = styled.span`
+    ${textLight}
+`;
+
 export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
   <ComponentContainer>
     <ControlLabelContainer>
-      <TextLight>{volume}%</TextLight>
+      <Timer>{volume}%</Timer>
     </ControlLabelContainer>
     <ControlContainer>
       <ControlPosition style={{left: `${volume}%`}}>

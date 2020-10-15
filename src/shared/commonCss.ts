@@ -23,6 +23,19 @@ export const fontFamily = css`
   font-family: 'Poppins', sans-serif;
 `;
 
+export const textBold = css`
+  ${fontFamily}
+  font-size: 1em;
+  font-weight: 600;
+
+`;
+
+export const textLight = css`
+  ${fontFamily}
+  font-size: .87em;
+  font-weight: 400;
+`;
+
 export const button = css`
   margin: 0;
   padding: 0;
@@ -53,19 +66,6 @@ export const ControlPosition = styled.div`
 export const ControlLabelContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-export const TextBold = styled.p`
-  ${fontFamily}
-  font-size: 1em;
-  font-weight: 600;
-
-`;
-
-export const TextLight = styled.p`
-  ${fontFamily}
-  font-size: .87em;
-  font-weight: 400;
 `;
 
 export const GlobalStyle = createGlobalStyle`
