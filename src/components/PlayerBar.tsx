@@ -5,13 +5,13 @@ import { PlaylistActions, PlaylistActionsProps } from './PlaylistActions';
 import { SongProgress, SongProgressProps } from './SongProgress';
 import { SongActions, SongActionsProps } from './SongActions';
 import { VolumeControl, VolumeProps } from './Volume';
-import { baseSpacing } from '../shared/commonCss';
+import { darkGrey, lightGrey, baseSpacing } from '../shared/commonCss';
 
 export type PlayerBarProps = PlayListProps & PlaylistActionsProps & SongProgressProps & SongActionsProps & VolumeProps;
 
 const Container = styled.main`
   display: flex;
-  background: linear-gradient(to right, #0d0d0e, #767676);
+  background: linear-gradient(to right, ${darkGrey}, ${lightGrey});
 `;
 
 const SongInfo = styled.section`
@@ -27,7 +27,7 @@ const SongControl = styled.section`
   justify-content: space-around;
   align-items: center;
   padding: ${baseSpacing};
-  background-color: #0d0d0e;
+  background-color: ${darkGrey};
   border-bottom-left-radius: 36px
 `;
 

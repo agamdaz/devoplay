@@ -6,6 +6,8 @@ import {
     ControlLabelContainer,
     TextLight,
     ControlPosition,
+    brandPrimary,
+    lightGrey,
 } from '../shared/commonCss';
 import { Pause } from './Icons';
 import { DragButton } from './Buttons';
@@ -49,8 +51,8 @@ export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElaps
             </clipPath>
           </defs>
           <g clipPath="url(#progress-clip-path)">
-            <rect id="Right_scale_background" width="396" height="30" fill="#767676"/>
-            <rect id="Left_scale_background" width={getProgress(timeTotal, timeElapsed)} height="30" fill="#bc6c82"/>
+            <rect id="Right_scale_background" width="396" height="30" fill={lightGrey}/>
+            <rect id="Left_scale_background" width={getProgress(timeTotal, timeElapsed)} height="30" fill={brandPrimary}/>
           </g>
         </svg>
       </ControlScale>

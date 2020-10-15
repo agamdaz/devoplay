@@ -1,12 +1,16 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
+export const brandPrimary = "#bc6c82";
+export const darkGrey = "#0d0d0e";
+export const lightGrey = "#767676";
+
 export const baseSpacing = "10px";
 
 export const actionIconSize = "16px";
 export const dragIconSize = "32px";
 
 export const bodyStyles = css`
-  background-color: #0D0D0E;
+  background-color: ${darkGrey};
 `;
 
 export const containers = css`

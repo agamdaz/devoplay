@@ -5,7 +5,7 @@ import {
   ControlContainer,
   ControlLabelContainer,
   TextLight,
-  ControlPosition,
+  ControlPosition, lightGrey, brandPrimary,
 } from '../shared/commonCss';
 import { Volume } from './Icons';
 import { DragButton } from './Buttons';
@@ -38,8 +38,8 @@ export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
             </clipPath>
           </defs>
           <g transform="translate(-1590 -1337)" clipPath="url(#volume-clip-path)">
-            <rect width="110" height="30" transform="translate(1590 1337)" fill="#767676"/>
-            <rect width={volume} height="30" transform="translate(1590 1337)" fill="#bc6c82"/>
+            <rect width="110" height="30" transform="translate(1590 1337)" fill={lightGrey}/>
+            <rect width={volume} height="30" transform="translate(1590 1337)" fill={brandPrimary}/>
           </g>
         </svg>
       </ControlScale>
