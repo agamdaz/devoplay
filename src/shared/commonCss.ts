@@ -9,6 +9,8 @@ export const baseSpacing = "10px";
 export const actionIconSize = "16px";
 export const dragIconSize = "32px";
 
+export const scaleMargin = dragIconSize;
+
 export const bodyStyles = css`
   background-color: ${darkGrey};
 `;

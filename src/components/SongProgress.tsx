@@ -8,6 +8,7 @@ import {
     brandPrimary,
     lightGrey,
     textLight,
+    scaleMargin,
 } from '../shared/commonCss';
 import { Pause } from './Icons';
 import { DragButton } from './Buttons';
@@ -27,8 +28,8 @@ function getProgress(total: number, elapsed: number) {
     return `${((elapsed / total) * 100).toFixed(0)}%`;
 }
 
-export const ControlScale = styled.div`
-  max-width: 396px;
+const Container = styled(ComponentContainer)`
+  max-width: calc(396px + ${scaleMargin});
 `;
 
 const Timer = styled.span`
@@ -36,7 +37,7 @@ const Timer = styled.span`
 `;
 
 export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElapsed}) => (
-  <ComponentContainer>
+  <Container>
     <ControlLabelContainer>
       <Timer>{millisecondsToTimer(timeElapsed)}</Timer>
       <Timer>{millisecondsToTimer(timeTotal)}</Timer>
@@ -45,7 +46,7 @@ export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElaps
       <ControlPosition style={{left: getProgress(timeTotal, timeElapsed)}}>
         <DragButton icon={Pause}/>
       </ControlPosition>
-      <ControlScale>
+      <div>
         <svg width="100%" height="30" viewBox="0 0 100% 30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="progress-clip-path">
@@ -59,7 +60,7 @@ export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElaps
             <rect id="Left_scale_background" width={getProgress(timeTotal, timeElapsed)} height="30" fill={brandPrimary}/>
           </g>
         </svg>
-      </ControlScale>
+      </div>
     </ControlContainer>
-  </ComponentContainer>
+  </Container>
 );

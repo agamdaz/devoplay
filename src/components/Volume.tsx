@@ -8,6 +8,7 @@ import {
   lightGrey,
   brandPrimary,
   textLight,
+  scaleMargin,
 } from '../shared/commonCss';
 import { Volume } from './Icons';
 import { DragButton } from './Buttons';
@@ -16,8 +17,8 @@ export interface VolumeProps {
   volume: number;
 }
 
-export const ControlScale = styled.div`
-  max-width: 110px;
+const Container = styled(ComponentContainer)`
+  max-width: calc(110px + ${scaleMargin});
 `;
 
 const Timer = styled.span`
@@ -25,7 +26,7 @@ const Timer = styled.span`
 `;
 
 export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
-  <ComponentContainer>
+  <Container>
     <ControlLabelContainer>
       <Timer>{volume}%</Timer>
     </ControlLabelContainer>
@@ -33,7 +34,7 @@ export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
       <ControlPosition style={{left: `${volume}%`}}>
         <DragButton icon={Volume}/>
       </ControlPosition>
-      <ControlScale>
+      <div>
         <svg width="100%" height="30" viewBox="0 0 100% 30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="volume-clip-path">
@@ -48,7 +49,7 @@ export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
             <rect width={volume} height="30" transform="translate(1590 1337)" fill={brandPrimary}/>
           </g>
         </svg>
-      </ControlScale>
+      </div>
     </ControlContainer>
-  </ComponentContainer>
+  </Container>
 );
