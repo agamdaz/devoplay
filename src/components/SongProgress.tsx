@@ -1,11 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
     ComponentContainer,
     ControlContainer,
     ControlLabelContainer,
     TextLight,
     ControlPosition,
-    ControlScale,
 } from '../shared/commonCss';
 import { Pause } from './Icons';
 import { DragButton } from './Buttons';
@@ -25,6 +25,10 @@ function getProgress(total: number, elapsed: number) {
     return `${((elapsed / total) * 100).toFixed(0)}%`;
 }
 
+export const ControlScale = styled.div`
+  max-width: 396px;
+`;
+
 export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElapsed}) => (
   <ComponentContainer>
     <ControlLabelContainer>
@@ -36,7 +40,7 @@ export const SongProgress: React.FC<SongProgressProps> = ({ timeTotal, timeElaps
         <DragButton icon={Pause}/>
       </ControlPosition>
       <ControlScale>
-        <svg width="396" height="30" viewBox="0 0 396 30" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="30" viewBox="0 0 100% 30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="progress-clip-path">
               <path

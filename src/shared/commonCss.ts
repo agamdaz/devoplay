@@ -46,11 +46,6 @@ export const ControlPosition = styled.div`
   margin-left: -26px;
 `;
 
-export const ControlScale = styled.div`
-  display: inline-block;
-  margin: 5px 0;
-`;
-
 export const ControlLabelContainer = styled.div`
   display: flex;
   justify-content: space-between;

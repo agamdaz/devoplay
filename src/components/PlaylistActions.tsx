@@ -16,8 +16,8 @@ const Container = styled(ComponentContainer)`
 
 export const PlaylistActions: React.FC<PlaylistActionsProps> = ({ onClickPlaylist, onClickLike, onClickDislike,  }) => (
   <Container>
-      <ActionButton icon={ExpandPlayList} onClick={onClickPlaylist}/>
-      <ActionButton icon={LikeSong} onClick={onClickLike}/>
-      <ActionButton icon={DislikeSong} onClick={onClickDislike}/>
+    <ActionButton icon={ExpandPlayList} onClick={onClickPlaylist}/>
+    <ActionButton icon={LikeSong} onClick={onClickLike}/>
+    <ActionButton icon={DislikeSong} onClick={onClickDislike}/>
   </Container>
 );

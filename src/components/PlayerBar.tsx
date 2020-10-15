@@ -24,7 +24,7 @@ const SongInfo = styled.section`
 const SongControl = styled.section`
   width: 60%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: ${baseSpacing};
   background-color: #0d0d0e;

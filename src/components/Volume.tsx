@@ -1,11 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   ComponentContainer,
   ControlContainer,
   ControlLabelContainer,
   TextLight,
   ControlPosition,
-  ControlScale,
 } from '../shared/commonCss';
 import { Volume } from './Icons';
 import { DragButton } from './Buttons';
@@ -13,6 +13,10 @@ import { DragButton } from './Buttons';
 export interface VolumeProps {
   volume: number;
 }
+
+export const ControlScale = styled.div`
+  max-width: 110px;
+`;
 
 export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
   <ComponentContainer>
@@ -24,7 +28,7 @@ export const VolumeControl: React.FC<VolumeProps> = ({ volume }) => (
         <DragButton icon={Volume}/>
       </ControlPosition>
       <ControlScale>
-        <svg width="110" height="30" viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="30" viewBox="0 0 100% 30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <clipPath id="volume-clip-path">
               <path
