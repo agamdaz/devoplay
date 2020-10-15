@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentContainer} from '../shared/commonCss';
 import { RepeatSong, ShufflePlaylist, SwitchDevice } from './Icons';
-import { ActionButton } from './ActionButton';
+import { ActionButton } from './Buttons';
 
 export interface SongActionsProps {
   onClickRepeat: () => void;

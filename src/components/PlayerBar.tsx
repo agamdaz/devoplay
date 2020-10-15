@@ -1,9 +1,9 @@
 import React from 'react';
 import { PlayList, PlayListProps } from './PlayListGallery';
-import { PlaylistActions, PlaylistActionsProps } from "./PlaylistActions";
-import { SongProgress, SongProgressProps } from "./SongProgress";
-import { SongActions, SongActionsProps } from "./SongActions";
-import { Volume, VolumeProps } from "./Volume";
+import { PlaylistActions, PlaylistActionsProps } from './PlaylistActions';
+import { SongProgress, SongProgressProps } from './SongProgress';
+import { SongActions, SongActionsProps } from './SongActions';
+import { VolumeControl, VolumeProps } from './Volume';
 import styled from 'styled-components';
 
 export type PlayerBarProps = PlayListProps & PlaylistActionsProps & SongProgressProps & SongActionsProps & VolumeProps;
@@ -40,7 +40,7 @@ export const PlayerBar: React.FC<PlayerBarProps> = (props) => (
       <SongControl>
         <SongProgress timeTotal={props.timeTotal} timeElapsed={props.timeElapsed}/>
         <SongActions onClickRepeat={props.onClickRepeat} onClickShuffle={props.onClickShuffle} onClickSwitch={props.onClickSwitch}/>
-        <Volume volume={props.volume}/>
+        <VolumeControl volume={props.volume}/>
       </SongControl>
     </Container>
   </main>
